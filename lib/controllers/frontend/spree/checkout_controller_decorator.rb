@@ -35,7 +35,7 @@ module Spree::CheckoutControllerDecorator
 
   # Introduces a registration step whenever the +registration_step+ preference is true.
   def check_registration
-    return unless Spree::Auth::Config[:registration_step]
+    return #unless Spree::Auth::Config[:registration_step]
     return if spree_current_user || current_order.email
     store_location
     redirect_to spree.checkout_registration_path
